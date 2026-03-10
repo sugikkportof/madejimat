@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gede Sugiartawan | Creative Web Developer</title>
-  <meta name="description" content="Portofolio Gede Sugiartawan - Web Developer & UI/UX Enthusiast.">
+  <title>Made Jimat | Pendidik & Penulis Buku</title>
+  <meta name="description" content="Website Resmi Made Jimat - Kepala Sekolah dan Penulis Inspiratif.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -19,24 +19,14 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Manrope"', 'sans-serif'],
           },
           colors: {
-            base: '#050505',
-            surface: '#111111',
-            primary: '#3B82F6', // Royal Blue
-            secondary: '#8B5CF6', // Purple
-          },
-          animation: {
-            'blob': 'blob 7s infinite',
-          },
-          keyframes: {
-            blob: {
-              '0%': { transform: 'translate(0px, 0px) scale(1)' },
-              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-              '100%': { transform: 'translate(0px, 0px) scale(1)' },
-            }
+            ivory: '#FDFCFB',    /* Putih Gading Mewah */
+            obsidian: '#121212', /* Hitam Pekat */
+            antique: '#C5A059',  /* Emas Klasik/Pudar */
+            charcoal: '#333333', /* Abu-abu Gelap untuk teks */
           }
         }
       }
@@ -44,164 +34,231 @@
   </script>
 
   <style>
-    body { background-color: #050505; color: #E5E7EB; overflow-x: hidden; }
+    body { background-color: #FDFCFB; color: #333333; overflow-x: hidden; }
     
-    /* Premium Glassmorphism */
-    .glass { background: rgba(17, 17, 17, 0.4); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
-    .glass-card { background: linear-gradient(145deg, rgba(30,30,30,0.4) 0%, rgba(10,10,10,0.8) 100%); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-    .glass-card:hover { border-color: rgba(139, 92, 246, 0.5); transform: translateY(-5px); box-shadow: 0 20px 40px -10px rgba(139, 92, 246, 0.15); }
+    /* Premium Glass Navbar */
+    .glass-nav { background: rgba(253, 252, 251, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.03); transition: all 0.4s ease; }
+    
+    /* Typographic Magic */
+    .editorial-title { letter-spacing: -0.02em; line-height: 0.95; }
+    
+    /* Elegant Buttons */
+    .btn-luxury { background-color: #121212; color: #FDFCFB; padding: 1rem 2.5rem; border-radius: 0px; font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.4s ease; border: 1px solid #121212; display: inline-block; }
+    .btn-luxury:hover { background-color: transparent; color: #121212; }
+    
+    /* Book Card Hover Effect (Mahal) */
+    .book-showcase { position: relative; overflow: hidden; background: #FFF; transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0,0,0,0.03); }
+    .book-showcase:hover { box-shadow: 0 30px 60px -15px rgba(0,0,0,0.1); transform: translateY(-10px); }
+    .book-cover { transition: transform 0.8s ease; filter: grayscale(10%); }
+    .book-showcase:hover .book-cover { transform: scale(1.05); filter: grayscale(0%); }
 
-    /* Gradient Text Asli 10 Juta */
-    .text-gradient { background: linear-gradient(to right, #3B82F6, #8B5CF6, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: gradient 4s linear infinite; }
-    @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    /* Timeline Styling */
+    .timeline-line { position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: rgba(0,0,0,0.1); }
+    .timeline-node { position: absolute; left: -4px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: #C5A059; box-shadow: 0 0 0 4px #FDFCFB; }
 
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #050505; }
-    ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #8B5CF6; }
+    /* Custom Selection */
+    ::selection { background-color: #C5A059; color: #FFF; }
   </style>
 </head>
-<body class="antialiased selection:bg-secondary selection:text-white">
+<body class="antialiased selection:bg-antique selection:text-white">
 
-  <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
-    <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-secondary/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
-    <div class="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-pink-500/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
-  </div>
-
-  <nav class="fixed w-full z-50 glass border-b-0 py-4 transition-all" id="navbar">
-    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold tracking-tighter text-white">
-        Gede<span class="text-secondary">.</span>
+  <nav class="fixed w-full z-50 glass-nav py-5 px-6 md:px-16" id="navbar">
+    <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+      <a href="#" class="font-serif font-bold text-2xl md:text-3xl text-obsidian tracking-wide">
+        Made Jimat<span class="text-antique">.</span>
       </a>
-      <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-        <a href="#work" class="hover:text-white transition-colors">Works</a>
-        <a href="#expertise" class="hover:text-white transition-colors">Expertise</a>
-        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      
+      <div class="hidden md:flex gap-10 text-xs font-bold tracking-[0.15em] uppercase text-charcoal">
+        <a href="#biography" class="hover:text-antique transition-colors">Biografi</a>
+        <a href="#literasi" class="hover:text-antique transition-colors">Karya Buku</a>
+        <a href="#pengabdian" class="hover:text-antique transition-colors">Pengabdian</a>
       </div>
-      <a href="#contact" class="hidden md:inline-block px-5 py-2 text-sm font-semibold rounded-full bg-white text-black hover:scale-105 transition-transform">Let's Talk</a>
+
+      <button id="mobile-menu-btn" class="md:hidden text-obsidian focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-ivory border-b border-gray-200 shadow-2xl">
+      <div class="flex flex-col px-8 py-8 space-y-6 text-sm font-bold tracking-[0.1em] uppercase text-obsidian">
+        <a href="#biography" class="hover:text-antique">Biografi</a>
+        <a href="#literasi" class="hover:text-antique">Karya Buku</a>
+        <a href="#pengabdian" class="hover:text-antique">Pengabdian</a>
+      </div>
     </div>
   </nav>
 
-  <section class="min-h-screen flex flex-col justify-center px-6 pt-20 relative">
-    <div class="max-w-5xl mx-auto w-full" data-aos="fade-up" data-aos-duration="1200">
-      <div class="inline-block px-4 py-1.5 rounded-full border border-white/10 glass text-xs font-semibold text-gray-300 mb-6 tracking-wide">
-        🟢 Available for freelance projects
-      </div>
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] mb-6 text-white">
-        Crafting Digital <br>
-        <span class="text-gradient">Experiences.</span>
-      </h1>
-      <p class="text-lg md:text-xl text-gray-400 max-w-2xl font-light mb-10 leading-relaxed">
-        Halo, saya Gede Sugiartawan. Seorang Web Developer yang berfokus pada desain antarmuka modern (UI/UX) dan pengembangan website bisnis yang cepat, elegan, dan fungsional.
-      </p>
-      <div class="flex gap-4 items-center">
-        <a href="#work" class="px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-colors">Lihat Karya</a>
-        <div class="flex gap-4 ml-4">
-          <a href="#" class="text-gray-400 hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-        </div>
-      </div>
+  <section class="min-h-screen flex items-center pt-24 pb-12 px-6 md:px-16 relative">
+    <div class="absolute top-1/2 left-0 transform -translate-y-1/2 -z-10 text-[15vw] font-serif font-bold text-gray-100 whitespace-nowrap opacity-50 select-none pointer-events-none">
+      EDUCATOR
     </div>
-  </section>
-
-  <section id="expertise" class="py-24 px-6 border-t border-white/5 relative z-10">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-sm font-bold tracking-widest uppercase text-secondary mb-12">The Arsenal</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
-          <h3 class="text-xl font-bold text-white mb-3">Front-End Dev</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Membangun website statis & dinamis dengan performa tinggi menggunakan HTML, CSS, JavaScript, dan Tailwind CSS.</p>
+    
+    <div class="max-w-7xl mx-auto w-full grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7" data-aos="fade-up" data-aos-duration="1200">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-[1px] bg-antique"></div>
+          <span class="font-sans text-xs font-bold tracking-[0.2em] uppercase text-antique">Kepala Sekolah & Penulis</span>
         </div>
-        <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg></div>
-          <h3 class="text-xl font-bold text-white mb-3">UI/UX & Figma</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Merancang wireframe, prototype, dan desain antarmuka yang estetis dan nyaman digunakan oleh klien sebelum masuk tahap koding.</p>
-        </div>
-        <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
-          <div class="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center text-pink-400 mb-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></div>
-          <h3 class="text-xl font-bold text-white mb-3">SEO & Hosting</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Optimasi struktur metadata agar website muncul di Google, serta manajemen deployment menggunakan Vercel & GitHub.</p>
-        </div>
+        <h1 class="font-serif text-6xl md:text-8xl lg:text-[7rem] text-obsidian font-bold editorial-title mb-8">
+          Membangun <br>
+          <span class="italic font-normal">Karakter,</span> <br>
+          Mewariskan <br>
+          <span class="italic text-antique font-normal">Pemikiran.</span>
+        </h1>
+        <p class="font-sans text-charcoal text-base md:text-lg leading-relaxed max-w-lg mb-10 font-light">
+          Sebuah dedikasi untuk memajukan pendidikan Indonesia. Menyatukan visi kepemimpinan di sekolah dengan gagasan abadi melalui karya literasi.
+        </p>
+        <a href="#literasi" class="btn-luxury">Eksplorasi Karya</a>
       </div>
-    </div>
-  </section>
-
-  <section id="work" class="py-24 px-6 border-t border-white/5 relative z-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex justify-between items-end mb-12" data-aos="fade-up">
-        <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Featured <br>Projects.</h2>
-        <p class="text-gray-400 text-sm hidden md:block">Hover to explore</p>
-      </div>
-
-      <div class="space-y-12">
-        <a href="#" class="group block glass-card rounded-3xl overflow-hidden p-6 md:p-8" data-aos="fade-up">
-          <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-              <div class="flex gap-2 mb-4">
-                <span class="px-3 py-1 text-[10px] uppercase tracking-widest font-bold bg-white/5 text-gray-300 rounded-full border border-white/10">HTML</span>
-                <span class="px-3 py-1 text-[10px] uppercase tracking-widest font-bold bg-white/5 text-gray-300 rounded-full border border-white/10">Tailwind</span>
-              </div>
-              <h3 class="text-3xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Bayu Computer IT Solusi</h3>
-              <p class="text-gray-400 text-sm leading-relaxed mb-6">Website company profile dan landing page untuk bisnis servis komputer lokal. Dilengkapi dengan filter layanan interaktif, integrasi Google Maps, dan galeri bergaya Cyber/Hacker.</p>
-              <span class="text-white font-semibold flex items-center gap-2 text-sm group-hover:gap-4 transition-all">View Project <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
-            </div>
-            <div class="order-1 md:order-2 overflow-hidden rounded-2xl border border-white/10 bg-surface aspect-video relative">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-              <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=800&q=80" alt="Bayu Computer Web" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="group block glass-card rounded-3xl overflow-hidden p-6 md:p-8" data-aos="fade-up">
-          <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-              <div class="flex gap-2 mb-4">
-                <span class="px-3 py-1 text-[10px] uppercase tracking-widest font-bold bg-white/5 text-gray-300 rounded-full border border-white/10">UI/UX</span>
-                <span class="px-3 py-1 text-[10px] uppercase tracking-widest font-bold bg-white/5 text-gray-300 rounded-full border border-white/10">F&B Web</span>
-              </div>
-              <h3 class="text-3xl font-bold text-white mb-4 group-hover:text-secondary transition-colors">Singaraja Social Coffee</h3>
-              <p class="text-gray-400 text-sm leading-relaxed mb-6">Sistem katalog menu interaktif dan formulir reservasi online bergaya premium. Menampilkan animasi produk dan integrasi langsung ke WhatsApp untuk booking tempat.</p>
-              <span class="text-white font-semibold flex items-center gap-2 text-sm group-hover:gap-4 transition-all">View Project <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
-            </div>
-            <div class="order-1 md:order-2 overflow-hidden rounded-2xl border border-white/10 bg-surface aspect-video relative">
-               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Coffee Web" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contact" class="pt-32 pb-10 px-6 border-t border-white/5 relative overflow-hidden z-10">
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-      <h2 class="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-8" data-aos="zoom-in">Let's build something <br><span class="text-gradient">amazing together.</span></h2>
-      <a href="mailto:email-lu-disini@gmail.com" class="inline-block px-8 py-4 rounded-full bg-white text-black font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.3)] mb-20">Start a Project</a>
       
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-gray-500 uppercase tracking-widest">
-        <p>© 2026 Gede Sugiartawan.</p>
-        <div class="flex gap-6">
-          <a href="#" class="hover:text-white transition-colors">Instagram</a>
-          <a href="#" class="hover:text-white transition-colors">GitHub</a>
-          <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+      <div class="md:col-span-5 relative" data-aos="fade-left" data-aos-duration="1500">
+        <div class="absolute -inset-4 bg-antique/10 transform translate-x-4 translate-y-4"></div>
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80" alt="Made Jimat Portrait" class="relative z-10 w-full h-[600px] object-cover filter contrast-125">
+      </div>
+    </div>
+  </section>
+
+  <section id="biography" class="py-24 px-6 bg-obsidian text-ivory text-center">
+    <div class="max-w-4xl mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+      <svg class="w-12 h-12 mx-auto text-antique mb-8 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+      <h2 class="font-serif text-3xl md:text-5xl italic leading-snug mb-10 font-light">
+        "Tugas seorang pendidik bukan sekadar mentransfer ilmu, melainkan memastikan setiap anak menemukan versi terbaik dari dirinya sendiri."
+      </h2>
+      <p class="font-sans text-xs font-bold tracking-[0.2em] uppercase text-antique">— Made Jimat</p>
+    </div>
+  </section>
+
+  <section id="literasi" class="py-32 px-6 md:px-16 bg-ivory">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-up">
+        <div>
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-8 h-[1px] bg-antique"></div>
+            <span class="font-sans text-xs font-bold tracking-[0.2em] uppercase text-antique">Publikasi</span>
+          </div>
+          <h2 class="font-serif text-5xl md:text-6xl text-obsidian font-bold">Karya <span class="italic font-normal text-antique">Buku</span></h2>
+        </div>
+        <p class="font-sans text-charcoal max-w-md text-sm leading-relaxed mt-6 md:mt-0">
+          Kumpulan pemikiran, strategi pendidikan, dan esai inspiratif yang lahir dari pengalaman puluhan tahun mengabdi di dunia pendidikan.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        
+        <div class="book-showcase group p-6 md:p-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-80 mb-8 overflow-hidden bg-gray-100 flex items-center justify-center p-4">
+            <div class="absolute inset-x-8 bottom-4 h-4 bg-black/20 blur-md"></div>
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80" alt="Buku 1" class="relative z-10 w-48 h-64 object-cover shadow-xl book-cover">
+          </div>
+          <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-antique mb-3">Pendidikan • 2024</p>
+          <h3 class="font-serif text-2xl text-obsidian font-bold mb-3 leading-snug">Menata Masa Depan Pendidikan</h3>
+          <p class="font-sans text-charcoal text-sm leading-relaxed mb-6">Panduan komprehensif implementasi Kurikulum Merdeka bagi pimpinan sekolah dan guru penggerak.</p>
+          <a href="#" class="inline-block border-b border-obsidian pb-1 font-sans text-xs font-bold tracking-widest uppercase text-obsidian hover:text-antique hover:border-antique transition-colors">Detail Buku</a>
+        </div>
+
+        <div class="book-showcase group p-6 md:p-8" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-80 mb-8 overflow-hidden bg-gray-100 flex items-center justify-center p-4">
+            <div class="absolute inset-x-8 bottom-4 h-4 bg-black/20 blur-md"></div>
+            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Buku 2" class="relative z-10 w-48 h-64 object-cover shadow-xl book-cover">
+          </div>
+          <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-antique mb-3">Inspirasi • 2022</p>
+          <h3 class="font-serif text-2xl text-obsidian font-bold mb-3 leading-snug">Jiwa Sang Pendidik</h3>
+          <p class="font-sans text-charcoal text-sm leading-relaxed mb-6">Kisah nyata dan refleksi mendalam tentang suka duka membangun karakter siswa di era digital.</p>
+          <a href="#" class="inline-block border-b border-obsidian pb-1 font-sans text-xs font-bold tracking-widest uppercase text-obsidian hover:text-antique hover:border-antique transition-colors">Detail Buku</a>
+        </div>
+
+        <div class="book-showcase group p-6 md:p-8" data-aos="fade-up" data-aos-delay="300">
+          <div class="relative h-80 mb-8 overflow-hidden bg-gray-100 flex items-center justify-center p-4">
+            <div class="absolute inset-x-8 bottom-4 h-4 bg-black/20 blur-md"></div>
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80" alt="Buku 3" class="relative z-10 w-48 h-64 object-cover shadow-xl book-cover">
+          </div>
+          <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-antique mb-3">Manajemen • 2020</p>
+          <h3 class="font-serif text-2xl text-obsidian font-bold mb-3 leading-snug">Seni Memimpin Sekolah</h3>
+          <p class="font-sans text-charcoal text-sm leading-relaxed mb-6">Strategi manajerial berbasis empati untuk menciptakan lingkungan belajar yang kondusif.</p>
+          <a href="#" class="inline-block border-b border-obsidian pb-1 font-sans text-xs font-bold tracking-widest uppercase text-obsidian hover:text-antique hover:border-antique transition-colors">Detail Buku</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="pengabdian" class="py-24 px-6 md:px-16 bg-[#F5F4F0]">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="font-serif text-5xl text-obsidian font-bold mb-4">Jejak <span class="italic font-normal text-antique">Pengabdian</span></h2>
+        <p class="font-sans text-charcoal max-w-xl mx-auto text-sm">Dedikasi puluhan tahun yang diabdikan sepenuhnya untuk mencerdaskan kehidupan bangsa.</p>
+      </div>
+
+      <div class="relative pl-6 md:pl-0">
+        <div class="timeline-line md:left-1/2 md:transform md:-translate-x-1/2"></div>
+        
+        <div class="relative mb-16 md:flex md:justify-between md:items-center w-full" data-aos="fade-up">
+          <div class="timeline-node md:left-1/2 md:transform md:-translate-x-1/2"></div>
+          <div class="md:w-5/12 md:text-right md:pr-10 mb-2 md:mb-0">
+            <p class="font-sans text-xs font-bold tracking-[0.2em] text-antique">2023 — SEKARANG</p>
+          </div>
+          <div class="md:w-5/12 md:pl-10">
+            <h3 class="font-serif text-2xl font-bold text-obsidian mb-2">Kepala Sekolah Berprestasi</h3>
+            <p class="font-sans text-sm text-charcoal leading-relaxed">Membawa sekolah meraih penghargaan tingkat nasional dengan menerapkan digitalisasi dan literasi aktif.</p>
+          </div>
+        </div>
+
+        <div class="relative mb-16 md:flex md:justify-between md:items-center w-full md:flex-row-reverse" data-aos="fade-up">
+          <div class="timeline-node md:left-1/2 md:transform md:-translate-x-1/2"></div>
+          <div class="md:w-5/12 md:pl-10 mb-2 md:mb-0">
+            <p class="font-sans text-xs font-bold tracking-[0.2em] text-antique">2018 — 2023</p>
+          </div>
+          <div class="md:w-5/12 md:text-right md:pr-10">
+            <h3 class="font-serif text-2xl font-bold text-obsidian mb-2">Wakil Kepala Bidang Kurikulum</h3>
+            <p class="font-sans text-sm text-charcoal leading-relaxed">Merumuskan cetak biru kurikulum adaptif yang menjadi percontohan bagi sekolah-sekolah di kabupaten.</p>
+          </div>
+        </div>
+
+        <div class="relative md:flex md:justify-between md:items-center w-full" data-aos="fade-up">
+          <div class="timeline-node md:left-1/2 md:transform md:-translate-x-1/2"></div>
+          <div class="md:w-5/12 md:text-right md:pr-10 mb-2 md:mb-0">
+            <p class="font-sans text-xs font-bold tracking-[0.2em] text-antique">2010 — 2018</p>
+          </div>
+          <div class="md:w-5/12 md:pl-10">
+            <h3 class="font-serif text-2xl font-bold text-obsidian mb-2">Guru & Penulis Lepas</h3>
+            <p class="font-sans text-sm text-charcoal leading-relaxed">Mengabdi sebagai pendidik sembari aktif mempublikasikan artikel opini pendidikan di berbagai media massa nasional.</p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <footer class="bg-obsidian pt-24 pb-12 px-6 border-t-[8px] border-antique">
+    <div class="max-w-5xl mx-auto text-center relative z-10 mb-20" data-aos="zoom-in">
+      <h2 class="font-serif text-5xl md:text-7xl text-ivory font-bold editorial-title mb-8">
+        Mari <span class="italic font-normal text-antique">Berdialektika.</span>
+      </h2>
+      <p class="font-sans text-gray-400 max-w-lg mx-auto mb-10 text-sm leading-relaxed">
+        Terbuka untuk undangan bedah buku, seminar pendidikan, atau diskusi terkait inovasi Kurikulum Merdeka di sekolah Anda.
+      </p>
+      <a href="https://wa.me/628000000000" class="btn-luxury" style="background-color: #FDFCFB; color: #121212; border-color: #FDFCFB;">Hubungi Made Jimat</a>
+    </div>
+    
+    <div class="max-w-7xl mx-auto pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 font-sans text-xs tracking-[0.2em] uppercase text-gray-500">
+      <p>© 2026 Made Jimat. Hak Cipta Dilindungi.</p>
+      <p>Exclusive Design by Gede Sugiartawan</p>
     </div>
   </footer>
 
   <script>
-    AOS.init({ once: true, duration: 800 });
+    AOS.init({ once: true, duration: 1000 });
     
-    // Navbar Blur Effect on Scroll
+    // Navbar Scroll & Hamburger Logic
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
       if (window.scrollY > 20) { 
-        nav.classList.add('border-b', 'border-white/10');
+        nav.classList.add('shadow-sm'); 
       } else { 
-        nav.classList.remove('border-b', 'border-white/10');
+        nav.classList.remove('shadow-sm'); 
       }
     });
   </script>
