@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Made Jimat | Pendidik & Penulis Buku</title>
-  <meta name="description" content="Website Resmi Made Jimat - Kepala Sekolah dan Penulis Inspiratif.">
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -19,14 +18,15 @@
       theme: {
         extend: {
           fontFamily: {
-            serif: ['"Cormorant Garamond"', 'serif'],
-            sans: ['"Manrope"', 'sans-serif'],
+            serif: ['"Lora"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
           colors: {
-            ivory: '#FDFCFB',    /* Putih Gading Mewah */
-            obsidian: '#121212', /* Hitam Pekat */
-            antique: '#C5A059',  /* Emas Klasik/Pudar */
-            charcoal: '#333333', /* Abu-abu Gelap untuk teks */
+            royal: '#0F172A',   /* Biru Sangat Gelap (Navy) */
+            ocean: '#1E3A8A',   /* Biru Laut Dalam */
+            accent: '#3B82F6',  /* Biru Terang (Neon Blue) */
+            ice: '#F0F9FF',     /* Putih Kebiruan (Background) */
+            slate: '#475569',   /* Abu-abu kebiruan untuk teks */
           }
         }
       }
@@ -34,232 +34,232 @@
   </script>
 
   <style>
-    body { background-color: #FDFCFB; color: #333333; overflow-x: hidden; }
+    body { background-color: #F0F9FF; color: #0F172A; overflow-x: hidden; }
     
-    /* Premium Glass Navbar */
-    .glass-nav { background: rgba(253, 252, 251, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.03); transition: all 0.4s ease; }
+    /* Navbar Kaca */
+    .glass-nav { background: rgba(240, 249, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(59, 130, 246, 0.1); }
     
-    /* Typographic Magic */
-    .editorial-title { letter-spacing: -0.02em; line-height: 0.95; }
+    /* Tombol Biru Elegan */
+    .btn-blue { background-color: #1E3A8A; color: #FFFFFF; padding: 1rem 2.5rem; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.4s ease; box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2); }
+    .btn-blue:hover { background-color: #3B82F6; transform: translateY(-3px); box-shadow: 0 15px 25px rgba(59, 130, 246, 0.3); }
     
-    /* Elegant Buttons */
-    .btn-luxury { background-color: #121212; color: #FDFCFB; padding: 1rem 2.5rem; border-radius: 0px; font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.4s ease; border: 1px solid #121212; display: inline-block; }
-    .btn-luxury:hover { background-color: transparent; color: #121212; }
-    
-    /* Book Card Hover Effect (Mahal) */
-    .book-showcase { position: relative; overflow: hidden; background: #FFF; transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0,0,0,0.03); }
-    .book-showcase:hover { box-shadow: 0 30px 60px -15px rgba(0,0,0,0.1); transform: translateY(-10px); }
-    .book-cover { transition: transform 0.8s ease; filter: grayscale(10%); }
-    .book-showcase:hover .book-cover { transform: scale(1.05); filter: grayscale(0%); }
+    /* Kartu Buku */
+    .book-card { background: #FFFFFF; border-radius: 16px; transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(59,130,246,0.05); }
+    .book-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(30,58,138, 0.15); border-color: rgba(59,130,246,0.3); }
+    .book-img { transition: transform 0.7s ease; }
+    .book-card:hover .book-img { transform: scale(1.05); }
 
-    /* Timeline Styling */
-    .timeline-line { position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: rgba(0,0,0,0.1); }
-    .timeline-node { position: absolute; left: -4px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: #C5A059; box-shadow: 0 0 0 4px #FDFCFB; }
+    /* TIMELINE MAGIC (Garis & Titik Panduan) */
+    .timeline-container { position: relative; }
+    /* Garis Lurus Biru Muda di Tengah */
+    .timeline-line { position: absolute; left: 24px; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #DBEAFE, #93C5FD, #DBEAFE); border-radius: 4px; }
+    @media (min-width: 768px) { .timeline-line { left: 50%; transform: translateX(-50%); } }
+    
+    /* Titik Bercahaya (Glowing Dots) */
+    .timeline-dot { position: absolute; left: 24px; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background-color: #3B82F6; border: 4px solid #F0F9FF; box-shadow: 0 0 15px rgba(59, 130, 246, 0.6); z-index: 10; transition: all 0.5s ease; }
+    @media (min-width: 768px) { .timeline-dot { left: 50%; } }
+    
+    /* Efek Dot saat di Hover areanya */
+    .timeline-item:hover .timeline-dot { transform: translateX(-50%) scale(1.3); background-color: #1E3A8A; box-shadow: 0 0 25px rgba(30, 58, 138, 0.8); }
 
-    /* Custom Selection */
-    ::selection { background-color: #C5A059; color: #FFF; }
+    ::selection { background-color: #3B82F6; color: #FFF; }
   </style>
 </head>
-<body class="antialiased selection:bg-antique selection:text-white">
+<body class="antialiased selection:bg-accent selection:text-white">
 
-  <nav class="fixed w-full z-50 glass-nav py-5 px-6 md:px-16" id="navbar">
+  <nav class="fixed w-full z-50 glass-nav py-4 px-6 md:px-16 transition-all" id="navbar">
     <div class="max-w-7xl mx-auto flex justify-between items-center relative">
-      <a href="#" class="font-serif font-bold text-2xl md:text-3xl text-obsidian tracking-wide">
-        Made Jimat<span class="text-antique">.</span>
+      <a href="#" class="font-serif font-bold text-2xl md:text-3xl text-royal tracking-tight">
+        Made Jimat<span class="text-accent">.</span>
       </a>
       
-      <div class="hidden md:flex gap-10 text-xs font-bold tracking-[0.15em] uppercase text-charcoal">
-        <a href="#biography" class="hover:text-antique transition-colors">Biografi</a>
-        <a href="#literasi" class="hover:text-antique transition-colors">Karya Buku</a>
-        <a href="#pengabdian" class="hover:text-antique transition-colors">Pengabdian</a>
+      <div class="hidden md:flex gap-10 text-xs font-bold tracking-[0.1em] uppercase text-slate">
+        <a href="#biography" class="hover:text-accent transition-colors">Biografi</a>
+        <a href="#literasi" class="hover:text-accent transition-colors">Karya Buku</a>
+        <a href="#pengabdian" class="hover:text-accent transition-colors">Pengabdian</a>
       </div>
 
-      <button id="mobile-menu-btn" class="md:hidden text-obsidian focus:outline-none">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      <button id="mobile-menu-btn" class="md:hidden text-ocean focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
       </button>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-ivory border-b border-gray-200 shadow-2xl">
-      <div class="flex flex-col px-8 py-8 space-y-6 text-sm font-bold tracking-[0.1em] uppercase text-obsidian">
-        <a href="#biography" class="hover:text-antique">Biografi</a>
-        <a href="#literasi" class="hover:text-antique">Karya Buku</a>
-        <a href="#pengabdian" class="hover:text-antique">Pengabdian</a>
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-blue-100 shadow-xl">
+      <div class="flex flex-col px-8 py-6 space-y-6 text-sm font-bold tracking-widest uppercase text-ocean">
+        <a href="#biography" class="hover:text-accent">Biografi</a>
+        <a href="#literasi" class="hover:text-accent">Karya Buku</a>
+        <a href="#pengabdian" class="hover:text-accent">Pengabdian</a>
       </div>
     </div>
   </nav>
 
-  <section class="min-h-screen flex items-center pt-24 pb-12 px-6 md:px-16 relative">
-    <div class="absolute top-1/2 left-0 transform -translate-y-1/2 -z-10 text-[15vw] font-serif font-bold text-gray-100 whitespace-nowrap opacity-50 select-none pointer-events-none">
-      EDUCATOR
-    </div>
+  <section class="min-h-screen flex items-center pt-24 pb-12 px-6 md:px-16 relative overflow-hidden">
+    <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-blue-200/40 blur-[80px] -z-10"></div>
+    <div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full bg-blue-300/30 blur-[80px] -z-10"></div>
     
     <div class="max-w-7xl mx-auto w-full grid md:grid-cols-12 gap-12 items-center">
       <div class="md:col-span-7" data-aos="fade-up" data-aos-duration="1200">
         <div class="flex items-center gap-4 mb-6">
-          <div class="w-12 h-[1px] bg-antique"></div>
-          <span class="font-sans text-xs font-bold tracking-[0.2em] uppercase text-antique">Kepala Sekolah & Penulis</span>
+          <div class="w-12 h-1 bg-accent rounded-full"></div>
+          <span class="font-sans text-xs font-extrabold tracking-[0.2em] uppercase text-accent">Kepala Sekolah & Penulis</span>
         </div>
-        <h1 class="font-serif text-6xl md:text-8xl lg:text-[7rem] text-obsidian font-bold editorial-title mb-8">
-          Membangun <br>
-          <span class="italic font-normal">Karakter,</span> <br>
-          Mewariskan <br>
-          <span class="italic text-antique font-normal">Pemikiran.</span>
+        <h1 class="font-serif text-5xl md:text-7xl text-royal font-bold leading-[1.1] mb-8">
+          Membangun <span class="text-ocean">Karakter,</span> <br>
+          Mewariskan <span class="italic text-accent font-medium">Pemikiran.</span>
         </h1>
-        <p class="font-sans text-charcoal text-base md:text-lg leading-relaxed max-w-lg mb-10 font-light">
+        <p class="font-sans text-slate text-lg leading-relaxed max-w-lg mb-10 font-medium">
           Sebuah dedikasi untuk memajukan pendidikan Indonesia. Menyatukan visi kepemimpinan di sekolah dengan gagasan abadi melalui karya literasi.
         </p>
-        <a href="#literasi" class="btn-luxury">Eksplorasi Karya</a>
+        <a href="#literasi" class="btn-blue inline-block">Eksplorasi Karya</a>
       </div>
       
-      <div class="md:col-span-5 relative" data-aos="fade-left" data-aos-duration="1500">
-        <div class="absolute -inset-4 bg-antique/10 transform translate-x-4 translate-y-4"></div>
-        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80" alt="Made Jimat Portrait" class="relative z-10 w-full h-[600px] object-cover filter contrast-125">
+      <div class="md:col-span-5 relative flex justify-center" data-aos="fade-left" data-aos-duration="1500">
+        <div class="absolute inset-0 bg-accent/10 rounded-[2rem] transform translate-x-4 translate-y-6 -z-10"></div>
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80" alt="Made Jimat Portrait" class="w-full max-w-md h-[550px] object-cover rounded-[2rem] shadow-2xl border-4 border-white">
       </div>
     </div>
   </section>
 
-  <section id="biography" class="py-24 px-6 bg-obsidian text-ivory text-center">
-    <div class="max-w-4xl mx-auto" data-aos="zoom-in" data-aos-duration="1000">
-      <svg class="w-12 h-12 mx-auto text-antique mb-8 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-      <h2 class="font-serif text-3xl md:text-5xl italic leading-snug mb-10 font-light">
+  <section id="biography" class="py-24 px-6 bg-ocean text-white text-center relative overflow-hidden">
+    <div class="absolute top-0 right-10 text-blue-400 opacity-20 font-serif text-[250px] leading-none select-none">"</div>
+    <div class="max-w-4xl mx-auto relative z-10" data-aos="zoom-in" data-aos-duration="1000">
+      <h2 class="font-serif text-3xl md:text-5xl italic leading-relaxed mb-10 font-medium">
         "Tugas seorang pendidik bukan sekadar mentransfer ilmu, melainkan memastikan setiap anak menemukan versi terbaik dari dirinya sendiri."
       </h2>
-      <p class="font-sans text-xs font-bold tracking-[0.2em] uppercase text-antique">— Made Jimat</p>
+      <p class="font-sans text-sm font-bold tracking-[0.2em] uppercase text-blue-200">— Made Jimat</p>
     </div>
   </section>
 
-  <section id="literasi" class="py-32 px-6 md:px-16 bg-ivory">
+  <section id="literasi" class="py-32 px-6 md:px-16 bg-white">
     <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-up">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-8 h-[1px] bg-antique"></div>
-            <span class="font-sans text-xs font-bold tracking-[0.2em] uppercase text-antique">Publikasi</span>
-          </div>
-          <h2 class="font-serif text-5xl md:text-6xl text-obsidian font-bold">Karya <span class="italic font-normal text-antique">Buku</span></h2>
-        </div>
-        <p class="font-sans text-charcoal max-w-md text-sm leading-relaxed mt-6 md:mt-0">
-          Kumpulan pemikiran, strategi pendidikan, dan esai inspiratif yang lahir dari pengalaman puluhan tahun mengabdi di dunia pendidikan.
+      <div class="text-center mb-20" data-aos="fade-up">
+        <span class="font-sans text-xs font-bold tracking-[0.2em] uppercase text-accent mb-4 block">Publikasi</span>
+        <h2 class="font-serif text-5xl md:text-6xl text-royal font-bold">Karya <span class="italic text-ocean">Literasi</span></h2>
+        <p class="font-sans text-slate max-w-2xl mx-auto mt-6 text-base leading-relaxed">
+          Kumpulan pemikiran, strategi pendidikan, dan esai inspiratif yang lahir dari pengalaman puluhan tahun mengabdi.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-        
-        <div class="book-showcase group p-6 md:p-8" data-aos="fade-up" data-aos-delay="100">
-          <div class="relative h-80 mb-8 overflow-hidden bg-gray-100 flex items-center justify-center p-4">
-            <div class="absolute inset-x-8 bottom-4 h-4 bg-black/20 blur-md"></div>
-            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80" alt="Buku 1" class="relative z-10 w-48 h-64 object-cover shadow-xl book-cover">
+        <div class="book-card group p-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-72 mb-8 overflow-hidden bg-ice rounded-xl flex items-center justify-center p-4">
+            <div class="absolute inset-x-10 bottom-6 h-4 bg-ocean/30 blur-md"></div>
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80" alt="Buku 1" class="relative z-10 w-44 h-60 object-cover shadow-xl book-img rounded-r-md">
           </div>
-          <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-antique mb-3">Pendidikan • 2024</p>
-          <h3 class="font-serif text-2xl text-obsidian font-bold mb-3 leading-snug">Menata Masa Depan Pendidikan</h3>
-          <p class="font-sans text-charcoal text-sm leading-relaxed mb-6">Panduan komprehensif implementasi Kurikulum Merdeka bagi pimpinan sekolah dan guru penggerak.</p>
-          <a href="#" class="inline-block border-b border-obsidian pb-1 font-sans text-xs font-bold tracking-widest uppercase text-obsidian hover:text-antique hover:border-antique transition-colors">Detail Buku</a>
-        </div>
-
-        <div class="book-showcase group p-6 md:p-8" data-aos="fade-up" data-aos-delay="200">
-          <div class="relative h-80 mb-8 overflow-hidden bg-gray-100 flex items-center justify-center p-4">
-            <div class="absolute inset-x-8 bottom-4 h-4 bg-black/20 blur-md"></div>
-            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Buku 2" class="relative z-10 w-48 h-64 object-cover shadow-xl book-cover">
-          </div>
-          <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-antique mb-3">Inspirasi • 2022</p>
-          <h3 class="font-serif text-2xl text-obsidian font-bold mb-3 leading-snug">Jiwa Sang Pendidik</h3>
-          <p class="font-sans text-charcoal text-sm leading-relaxed mb-6">Kisah nyata dan refleksi mendalam tentang suka duka membangun karakter siswa di era digital.</p>
-          <a href="#" class="inline-block border-b border-obsidian pb-1 font-sans text-xs font-bold tracking-widest uppercase text-obsidian hover:text-antique hover:border-antique transition-colors">Detail Buku</a>
-        </div>
-
-        <div class="book-showcase group p-6 md:p-8" data-aos="fade-up" data-aos-delay="300">
-          <div class="relative h-80 mb-8 overflow-hidden bg-gray-100 flex items-center justify-center p-4">
-            <div class="absolute inset-x-8 bottom-4 h-4 bg-black/20 blur-md"></div>
-            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80" alt="Buku 3" class="relative z-10 w-48 h-64 object-cover shadow-xl book-cover">
-          </div>
-          <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-antique mb-3">Manajemen • 2020</p>
-          <h3 class="font-serif text-2xl text-obsidian font-bold mb-3 leading-snug">Seni Memimpin Sekolah</h3>
-          <p class="font-sans text-charcoal text-sm leading-relaxed mb-6">Strategi manajerial berbasis empati untuk menciptakan lingkungan belajar yang kondusif.</p>
-          <a href="#" class="inline-block border-b border-obsidian pb-1 font-sans text-xs font-bold tracking-widest uppercase text-obsidian hover:text-antique hover:border-antique transition-colors">Detail Buku</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="pengabdian" class="py-24 px-6 md:px-16 bg-[#F5F4F0]">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-20" data-aos="fade-up">
-        <h2 class="font-serif text-5xl text-obsidian font-bold mb-4">Jejak <span class="italic font-normal text-antique">Pengabdian</span></h2>
-        <p class="font-sans text-charcoal max-w-xl mx-auto text-sm">Dedikasi puluhan tahun yang diabdikan sepenuhnya untuk mencerdaskan kehidupan bangsa.</p>
-      </div>
-
-      <div class="relative pl-6 md:pl-0">
-        <div class="timeline-line md:left-1/2 md:transform md:-translate-x-1/2"></div>
-        
-        <div class="relative mb-16 md:flex md:justify-between md:items-center w-full" data-aos="fade-up">
-          <div class="timeline-node md:left-1/2 md:transform md:-translate-x-1/2"></div>
-          <div class="md:w-5/12 md:text-right md:pr-10 mb-2 md:mb-0">
-            <p class="font-sans text-xs font-bold tracking-[0.2em] text-antique">2023 — SEKARANG</p>
-          </div>
-          <div class="md:w-5/12 md:pl-10">
-            <h3 class="font-serif text-2xl font-bold text-obsidian mb-2">Kepala Sekolah Berprestasi</h3>
-            <p class="font-sans text-sm text-charcoal leading-relaxed">Membawa sekolah meraih penghargaan tingkat nasional dengan menerapkan digitalisasi dan literasi aktif.</p>
+          <div class="px-4 pb-4">
+            <p class="font-sans text-xs font-bold tracking-widest uppercase text-accent mb-3">Pendidikan • 2024</p>
+            <h3 class="font-serif text-2xl text-royal font-bold mb-3 leading-snug group-hover:text-ocean transition-colors">Menata Masa Depan Pendidikan</h3>
+            <p class="font-sans text-slate text-sm leading-relaxed mb-6">Panduan komprehensif implementasi Kurikulum Merdeka bagi pimpinan sekolah dan guru penggerak.</p>
           </div>
         </div>
 
-        <div class="relative mb-16 md:flex md:justify-between md:items-center w-full md:flex-row-reverse" data-aos="fade-up">
-          <div class="timeline-node md:left-1/2 md:transform md:-translate-x-1/2"></div>
-          <div class="md:w-5/12 md:pl-10 mb-2 md:mb-0">
-            <p class="font-sans text-xs font-bold tracking-[0.2em] text-antique">2018 — 2023</p>
+        <div class="book-card group p-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-72 mb-8 overflow-hidden bg-ice rounded-xl flex items-center justify-center p-4">
+            <div class="absolute inset-x-10 bottom-6 h-4 bg-ocean/30 blur-md"></div>
+            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Buku 2" class="relative z-10 w-44 h-60 object-cover shadow-xl book-img rounded-r-md">
           </div>
-          <div class="md:w-5/12 md:text-right md:pr-10">
-            <h3 class="font-serif text-2xl font-bold text-obsidian mb-2">Wakil Kepala Bidang Kurikulum</h3>
-            <p class="font-sans text-sm text-charcoal leading-relaxed">Merumuskan cetak biru kurikulum adaptif yang menjadi percontohan bagi sekolah-sekolah di kabupaten.</p>
+          <div class="px-4 pb-4">
+            <p class="font-sans text-xs font-bold tracking-widest uppercase text-accent mb-3">Inspirasi • 2022</p>
+            <h3 class="font-serif text-2xl text-royal font-bold mb-3 leading-snug group-hover:text-ocean transition-colors">Jiwa Sang Pendidik</h3>
+            <p class="font-sans text-slate text-sm leading-relaxed mb-6">Kisah nyata dan refleksi mendalam tentang suka duka membangun karakter siswa di era digital.</p>
           </div>
         </div>
 
-        <div class="relative md:flex md:justify-between md:items-center w-full" data-aos="fade-up">
-          <div class="timeline-node md:left-1/2 md:transform md:-translate-x-1/2"></div>
-          <div class="md:w-5/12 md:text-right md:pr-10 mb-2 md:mb-0">
-            <p class="font-sans text-xs font-bold tracking-[0.2em] text-antique">2010 — 2018</p>
+        <div class="book-card group p-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="relative h-72 mb-8 overflow-hidden bg-ice rounded-xl flex items-center justify-center p-4">
+            <div class="absolute inset-x-10 bottom-6 h-4 bg-ocean/30 blur-md"></div>
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80" alt="Buku 3" class="relative z-10 w-44 h-60 object-cover shadow-xl book-img rounded-r-md">
           </div>
-          <div class="md:w-5/12 md:pl-10">
-            <h3 class="font-serif text-2xl font-bold text-obsidian mb-2">Guru & Penulis Lepas</h3>
-            <p class="font-sans text-sm text-charcoal leading-relaxed">Mengabdi sebagai pendidik sembari aktif mempublikasikan artikel opini pendidikan di berbagai media massa nasional.</p>
+          <div class="px-4 pb-4">
+            <p class="font-sans text-xs font-bold tracking-widest uppercase text-accent mb-3">Manajemen • 2020</p>
+            <h3 class="font-serif text-2xl text-royal font-bold mb-3 leading-snug group-hover:text-ocean transition-colors">Seni Memimpin Sekolah</h3>
+            <p class="font-sans text-slate text-sm leading-relaxed mb-6">Strategi manajerial berbasis empati untuk menciptakan lingkungan belajar yang kondusif.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-obsidian pt-24 pb-12 px-6 border-t-[8px] border-antique">
+  <section id="pengabdian" class="py-24 px-6 md:px-16 bg-ice">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-24" data-aos="fade-up">
+        <h2 class="font-serif text-4xl md:text-5xl text-royal font-bold mb-4">Jejak <span class="italic text-ocean">Pengabdian</span></h2>
+        <p class="font-sans text-slate max-w-xl mx-auto text-base">Dedikasi puluhan tahun yang diabdikan sepenuhnya untuk mencerdaskan kehidupan bangsa.</p>
+      </div>
+
+      <div class="timeline-container pb-10">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-item relative flex flex-col md:flex-row justify-between items-center w-full mb-16 pl-12 md:pl-0" data-aos="fade-up" data-aos-duration="1000">
+          <div class="timeline-dot top-2 md:top-1/2 md:-translate-y-1/2"></div>
+          
+          <div class="md:w-5/12 md:text-right pr-0 md:pr-12 w-full mb-2 md:mb-0">
+            <p class="font-sans text-sm font-bold tracking-widest text-accent bg-blue-100 inline-block px-4 py-1 rounded-full mb-3 md:mb-0">2023 — SEKARANG</p>
+          </div>
+          <div class="md:w-5/12 pl-0 md:pl-12 w-full bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-sm md:shadow-none border md:border-none border-blue-50">
+            <h3 class="font-serif text-2xl font-bold text-royal mb-3">Kepala Sekolah Berprestasi</h3>
+            <p class="font-sans text-sm text-slate leading-relaxed">Membawa sekolah meraih penghargaan tingkat nasional dengan menerapkan digitalisasi dan literasi aktif secara masif.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item relative flex flex-col md:flex-row-reverse justify-between items-center w-full mb-16 pl-12 md:pl-0" data-aos="fade-up" data-aos-duration="1000">
+          <div class="timeline-dot top-2 md:top-1/2 md:-translate-y-1/2"></div>
+          
+          <div class="md:w-5/12 pl-0 md:pl-12 w-full mb-2 md:mb-0">
+            <p class="font-sans text-sm font-bold tracking-widest text-accent bg-blue-100 inline-block px-4 py-1 rounded-full mb-3 md:mb-0">2018 — 2023</p>
+          </div>
+          <div class="md:w-5/12 md:text-right pr-0 md:pr-12 w-full bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-sm md:shadow-none border md:border-none border-blue-50">
+            <h3 class="font-serif text-2xl font-bold text-royal mb-3">Wakil Kepala Bidang Kurikulum</h3>
+            <p class="font-sans text-sm text-slate leading-relaxed">Merumuskan cetak biru kurikulum adaptif yang menjadi percontohan dan diadopsi oleh sekolah-sekolah di kabupaten.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item relative flex flex-col md:flex-row justify-between items-center w-full pl-12 md:pl-0" data-aos="fade-up" data-aos-duration="1000">
+          <div class="timeline-dot top-2 md:top-1/2 md:-translate-y-1/2"></div>
+          
+          <div class="md:w-5/12 md:text-right pr-0 md:pr-12 w-full mb-2 md:mb-0">
+            <p class="font-sans text-sm font-bold tracking-widest text-accent bg-blue-100 inline-block px-4 py-1 rounded-full mb-3 md:mb-0">2010 — 2018</p>
+          </div>
+          <div class="md:w-5/12 pl-0 md:pl-12 w-full bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-sm md:shadow-none border md:border-none border-blue-50">
+            <h3 class="font-serif text-2xl font-bold text-royal mb-3">Guru & Penulis Lepas</h3>
+            <p class="font-sans text-sm text-slate leading-relaxed">Mengabdi sebagai pendidik sembari aktif mempublikasikan artikel opini pendidikan di berbagai media massa nasional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-royal pt-24 pb-12 px-6 border-t-[6px] border-accent">
     <div class="max-w-5xl mx-auto text-center relative z-10 mb-20" data-aos="zoom-in">
-      <h2 class="font-serif text-5xl md:text-7xl text-ivory font-bold editorial-title mb-8">
-        Mari <span class="italic font-normal text-antique">Berdialektika.</span>
+      <h2 class="font-serif text-4xl md:text-6xl text-white font-bold mb-8">
+        Mari <span class="italic text-accent">Berdialektika.</span>
       </h2>
-      <p class="font-sans text-gray-400 max-w-lg mx-auto mb-10 text-sm leading-relaxed">
+      <p class="font-sans text-blue-200/70 max-w-lg mx-auto mb-10 text-sm leading-relaxed">
         Terbuka untuk undangan bedah buku, seminar pendidikan, atau diskusi terkait inovasi Kurikulum Merdeka di sekolah Anda.
       </p>
-      <a href="https://wa.me/628000000000" class="btn-luxury" style="background-color: #FDFCFB; color: #121212; border-color: #FDFCFB;">Hubungi Made Jimat</a>
+      <a href="https://wa.me/628000000000" class="btn-blue bg-accent hover:bg-white hover:text-royal">Hubungi Made Jimat</a>
     </div>
     
-    <div class="max-w-7xl mx-auto pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 font-sans text-xs tracking-[0.2em] uppercase text-gray-500">
+    <div class="max-w-7xl mx-auto pt-8 border-t border-blue-900 flex flex-col md:flex-row justify-between items-center gap-4 font-sans text-xs tracking-widest uppercase text-blue-400 font-semibold">
       <p>© 2026 Made Jimat. Hak Cipta Dilindungi.</p>
       <p>Exclusive Design by Gede Sugiartawan</p>
     </div>
   </footer>
 
   <script>
-    AOS.init({ once: true, duration: 1000 });
+    // Animasi Muncul dari Bawah (AOS)
+    AOS.init({ once: true, duration: 1000, offset: 100 });
     
-    // Navbar Scroll & Hamburger Logic
+    // Hamburger Menu
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
     btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
 
+    // Efek Kaca di Navbar Saat Scroll
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
-      if (window.scrollY > 20) { 
-        nav.classList.add('shadow-sm'); 
-      } else { 
-        nav.classList.remove('shadow-sm'); 
-      }
+      if (window.scrollY > 20) { nav.classList.add('shadow-md'); } 
+      else { nav.classList.remove('shadow-md'); }
     });
   </script>
 </body>
